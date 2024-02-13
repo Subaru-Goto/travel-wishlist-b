@@ -3,12 +3,7 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const StudentSchema = new Schema({
-  name: {
-    type: String,
-    required: true,
-    lowercase: true,
-    minLength: 1,
-  },
+
   first_name: {
     type: String,
     required: true,
