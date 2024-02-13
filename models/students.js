@@ -15,6 +15,14 @@ const StudentSchema = new Schema({
     lowercase: true,
     minLength: 1,
   },
+
+  last_name: {
+    type: String,
+    required: true,
+    lowercase: true,
+    minLength: 1,
+  },
+
   email: {
     type: String,
     lowercase: true,
