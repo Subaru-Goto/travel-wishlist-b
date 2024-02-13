@@ -7,13 +7,13 @@ const StudentSchema = new Schema({
     type: String,
     required: true,
     lowercase: true,
-    min: 1,
+    minLength: 1,
   },
   first_name: {
     type: String,
     required: true,
     lowercase: true,
-    min: 1,
+    minLength: 1,
   },
   email: {
     type: String,
