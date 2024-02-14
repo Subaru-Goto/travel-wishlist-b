@@ -3,7 +3,7 @@ import { tryAndCatch } from "../utils/tryAndCatch.js";
 
 export const getStudents = tryAndCatch(
   async (req, res, next) => {
-    const data = await Student.find().populate("countries");
+    const data = await Student.find().populate("Country");
     if (!data) {
       return next( {statusCode:404, message:"No data found."} );
     } else {
