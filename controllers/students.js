@@ -14,8 +14,9 @@ export const getStudents = tryAndCatch(
 
 export const addStudent = tryAndCatch(
   async (req, res, next) => {
-    const { first_name, last_name, email, country } = req.body;
-    const data = await Student.create({ first_name, last_name, email, country });
+    console.log(req.body);
+    const { firstName, lastName, email, country } = req.body;
+    const data = await Student.create({ first_name: firstName, last_name: lastName, email, country });
     res.status(201).send(data);
   }
 );
