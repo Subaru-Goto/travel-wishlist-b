@@ -25,7 +25,11 @@ const StudentSchema = new Schema({
       validator: email => new RegExp("^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$").test(email),
       message: "Please input an email!"
     },
-  }
+  },
+
+  country: [{
+    type:Schema.Types.ObjectId, ref:"Country"
+  }]
 }); 
 
 const Student = mongoose.model("Student", StudentSchema);
