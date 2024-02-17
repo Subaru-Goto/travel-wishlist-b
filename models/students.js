@@ -27,6 +27,10 @@ const StudentSchema = new Schema({
     },
   },
 
+  password: {
+    type: String,
+  },
+
   country: [{
     type:Schema.Types.ObjectId, ref:"Country"
   }]

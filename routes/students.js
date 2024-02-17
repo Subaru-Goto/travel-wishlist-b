@@ -1,7 +1,9 @@
 import express from "express";
-import { addStudent, getStudents } from "../controllers/students.js";
+import { addCountryWishList, registerStudent, getStudents } from "../controllers/students.js";
 
 export const studentsRouter = express.Router();
 
 studentsRouter.get("/", getStudents);
-studentsRouter.post("/", addStudent);
+studentsRouter.post("/", registerStudent);
+studentsRouter.post("/:id/add-country", addCountryWishList);
+studentsRouter.post("/login", loginStudent);
