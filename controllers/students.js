@@ -4,7 +4,6 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
 const secretToken = process.env.SECRET_TOKEN;
-console.log(secretToken)
 
 const generateToken = (data) => {
   return jwt.sign(data, secretToken, {expiresIn: "1h"});
@@ -39,8 +38,8 @@ export const logInStudent = tryAndCatch(
     const validPassword = await bcrypt.compare(password, data.password);
     if(! validPassword) {return res.status(400).send("Invalid Credential.");}
     
-    const token = generateToken({email: data.email});
-    res.json({ token });
+    const token = generateToken({email: data.email, id: data._id });
+    res.json({ token, data });
   }
 )
 
