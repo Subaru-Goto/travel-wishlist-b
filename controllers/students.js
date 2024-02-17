@@ -3,10 +3,11 @@ import { tryAndCatch } from "../utils/tryAndCatch.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
-const seacretToken = process.env.SECRET_TOKEN;
+const secretToken = process.env.SECRET_TOKEN;
+console.log(secretToken)
 
 const generateToken = (data) => {
-  return jwt.sign(data, seacretToken, {expiresIn: "1h"});
+  return jwt.sign(data, secretToken, {expiresIn: "1h"});
 };
 
 export const getStudents = tryAndCatch(
