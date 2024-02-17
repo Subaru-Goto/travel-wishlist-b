@@ -1,7 +1,7 @@
 import "dotenv/config";
 import express from "express";
 import { connectDatabase } from "./db/client.js";
-import { apiRouter } from "./routes/api.js";
+import { countryRouter } from "./routes/countries.js";
 import { studentsRouter } from "./routes/students.js";
 import { errorHandler } from "./middlewares/errorHandler.js";
 import cors from "cors";
@@ -12,7 +12,7 @@ const port = process.env.PORT || 8001;
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use("/api/countries", apiRouter);
+app.use("/api/countries", countryRouter);
 app.use("/api/students", studentsRouter);
 app.use(errorHandler);
 
