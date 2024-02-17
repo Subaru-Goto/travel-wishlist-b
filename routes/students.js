@@ -5,6 +5,6 @@ import { checkEmailExists } from "../middlewares/checkEmailExist.js";
 export const studentsRouter = express.Router();
 
 studentsRouter.get("/", getStudents);
-studentsRouter.post("/", checkEmailExists, registerStudent);
-studentsRouter.post("/", logInStudent);
+studentsRouter.post("/register", checkEmailExists, registerStudent);
+studentsRouter.post("/login", logInStudent);
 studentsRouter.post("/:id/add-country", addCountryWishList);
