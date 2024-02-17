@@ -3,7 +3,7 @@ import { tryAndCatch } from "../utils/tryAndCatch.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
-const seacretToken = process.env.SEACRET_TOKEN;
+const seacretToken = process.env.SECRET_TOKEN;
 
 const generateToken = (data) => {
   return jwt.sign(data, seacretToken, {expiresIn: "1h"});
