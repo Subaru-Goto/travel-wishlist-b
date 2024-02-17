@@ -33,10 +33,10 @@ export const logInStudent = tryAndCatch(
   async (req, res, next) => {
     const { email, password } = req.body;
     const data = await Student.findOne({email: email});
-    if(!data) {return res.sendStatus(404);}
+    if(!data) {return res.status(404).send("! User not found");}
 
     const validPassword = await bcrypt.compare(password, data.password);
-    if(! validPassword) {return res.status(400).send("Invalid Credential.");}
+    if(! validPassword) {return res.status(400).send("! Invalid Credential");}
     
     const token = generateToken({email: data.email, id: data._id });
     res.json({ token, data });
