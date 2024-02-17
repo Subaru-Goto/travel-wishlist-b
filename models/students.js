@@ -21,6 +21,7 @@ const StudentSchema = new Schema({
   email: {
     type: String,
     lowercase: true,
+    required:true,
     validate: {
       validator: email => new RegExp("^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$").test(email),
       message: "Please input an email!"
@@ -29,6 +30,7 @@ const StudentSchema = new Schema({
 
   password: {
     type: String,
+    required: true
   },
 
   country: [{
