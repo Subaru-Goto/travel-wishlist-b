@@ -6,4 +6,3 @@ export const studentsRouter = express.Router();
 studentsRouter.get("/", getStudents);
 studentsRouter.post("/", registerStudent);
 studentsRouter.post("/:id/add-country", addCountryWishList);
-studentsRouter.post("/login", loginStudent);

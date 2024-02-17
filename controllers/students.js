@@ -37,9 +37,3 @@ export const addCountryWishList = tryAndCatch(
     res.status(201).send(data);
   }
 );
-
-export const loginStudent = tryAndCatch(
-  async (req, res, next) => {
-
-  }
-);
