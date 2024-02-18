@@ -27,7 +27,7 @@ export const authMiddleware = (req, res, next) => {
      if(err){
         return res.sendStatus(403);
      }
-     console.log(student, 'token decoded');
+     console.log(student, "token decoded");
      req.student = student;
      return next()
     })

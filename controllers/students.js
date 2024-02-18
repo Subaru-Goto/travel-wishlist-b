@@ -20,6 +20,18 @@ export const getStudents = tryAndCatch(
   }
 );
 
+export const getStudent = tryAndCatch(
+  async (req, res, next) => {
+    const { id } = req.student;
+    const data = await Student.findById(id);
+    if(!data){
+        res.sendStatus(404)
+    } else {
+        res.json(data)
+    }
+  }
+); 
+
 export const registerStudent = tryAndCatch(
   async (req, res, next) => {
     const { firstName, lastName, email, password} = req.body;
