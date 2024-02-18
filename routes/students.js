@@ -6,6 +6,6 @@ export const studentsRouter = express.Router();
 
 studentsRouter.get("/", getStudents);
 studentsRouter.get("/student", authMiddleware, getStudent);
-studentsRouter.post("/register", checkEmailExists, registerStudent);
+studentsRouter.post("/signup", checkEmailExists, registerStudent);
 studentsRouter.post("/login", logInStudent);
 studentsRouter.post("/:id/add-country", addCountryWishList);
